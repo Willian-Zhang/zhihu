@@ -42,7 +42,7 @@ var getUserByName = function (name) {
       follower: formatFollowData(values.eq(2).text())
     };
     result.profileUrl = config.zhihu + avatar.attr('href');
-    result.avatarUrl = config.zhihu + avatar.attr('src');
+    result.avatarUrl = avatar.find('img').attr('src').replace('_xs.jpg','_xl.jpg');
     result.name = $('span.name').text();
     var male = $('.icon-profile-female');
     result.sex = male.length === 1 ? 'female' : 'male';
