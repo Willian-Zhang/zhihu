@@ -30,7 +30,7 @@ var getUserByName = function (name) {
     }
   };
   return request(data).then(function (content) {
-    var responseBody = content[0].body;
+    var responseBody = content.body;
     var $ = cheerio.load(responseBody);
     var values = $("span.value");
     var result = {
