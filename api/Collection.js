@@ -145,10 +145,6 @@ function getCollectionInfo(url){
   });
 }
 
-// getDataByPage('http://www.zhihu.com/collection/25547043?page=1').then(function(data){
-//     console.log(data[0].atoken);
-// });
-
 module.exports = {
   getAllPageData: getAllPageData,
   getDataByPage: getDataByPage,
