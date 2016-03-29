@@ -6,8 +6,7 @@
  * @description
  *
  */
-var Promise = require('bluebird'),
-request     = Promise.promisify(require("request")),
+var request = require('request-promise'),
 cheerio     = require('cheerio'),
 config      = require('./config'),
 url         = require('url'),
@@ -30,8 +29,7 @@ var getUserByName = function (name) {
     }
   };
   return request(data).then(function (content) {
-    var responseBody = content.body;
-    var $ = cheerio.load(responseBody);
+    var $ = cheerio.load(content);
     var values = $("span.value");
     var result = {
       answer  : formatFollowData(values.eq(0).text()),
