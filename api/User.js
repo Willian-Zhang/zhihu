@@ -41,6 +41,8 @@ var getUserByName = function (name) {
       post    : formatFollowData(values.eq(1).text()),
       follower: formatFollowData(values.eq(2).text())
     };
+    result.id  = $('[data-id]').attr('data-id');
+    result.tag = $('div.tagline').text();
     result.profileUrl = config.zhihu + avatar.attr('href');
     result.avatarUrl = avatar.find('img').attr('src').replace('_xs.jpg','_xl.jpg');
     result.name = $('span.name').text();
